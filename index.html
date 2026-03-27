@@ -3,59 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model S | Premium E-commerce</title>
+    <title>NovaCartel - Premium E-commerce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <nav class="tesla-nav">
-        <div class="logo">LUXE</div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">NovaCartel</div>
         <ul class="nav-menu">
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Menu</a></li>
+            <li><a href="#vehicles">Vehicles</a></li>
+            <li><a href="#energy">Energy</a></li>
+            <li><a href="#apparel">Apparel</a></li>
+            <li class="discover">
+                <a href="#">Discover</a>
+                <div class="mega-menu">
+                    <div class="mega-col">
+                        <h4>Resources</h4>
+                        <a href="#">Demo Drive</a>
+                        <a href="#">Insurance</a>
+                        <a href="#">Video Guides</a>
+                    </div>
+                    <div class="mega-col">
+                        <h4>Locations</h4>
+                        <a href="#">Kampala (HQ)</a>
+                        <a href="#">Nairobi</a>
+                        <a href="#">Kigali</a>
+                    </div>
+                    <div class="mega-col">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Investors</a>
+                    </div>
+                </div>
+            </li>
+    <li><a href="#">Shop</a></li>
+            <li><button class="auth-btn" onclick="toggleAuthModal()">Sign In</button></li>
         </ul>
     </nav>
 
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="switchTab('sign-in')">Sign In</button>
+                <button class="tab-btn" onclick="switchTab('sign-up')">Sign Up</button>
+            </div>
+            
+            <div id="sign-in-tab" class="auth-tab active">
+                <button class="google-btn">Sign in with Google</button>
+                <div class="divider">OR</div>
+                <input type="email" placeholder="Email" class="auth-input">
+                <input type="password" placeholder="Password" class="auth-input">
+                <button class="cta-button">Sign In</button>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+            
+            <div id="sign-up-tab" class="auth-tab">
+                <button class="google-btn">Sign up with Google</button>
+                <div class="divider">OR</div>
+                <input type="email" placeholder="Email" class="auth-input">
+                <input type="password" placeholder="Password" class="auth-input">
+                <input type="password" placeholder="Confirm Password" class="auth-input">
+                <button class="cta-button">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Visual -->
     <main class="page-wrapper">
         <section class="visual-stage">
-            <div class="sticky-image-container">
-                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&q=80&w=1000" 
-                     alt="Product" id="main-product-image" class="hero-image">
+            <div class="hero-wrapper">
+                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1200" id="hero-image" class="hero-image" alt="Hero Product">
             </div>
         </section>
 
+        <!-- Dynamic Content -->
+        <div id="content-sections" class="content-sections">
+            <!-- Product grid will render here -->
+        </div>
+
+        <!-- Configurator Sidebar -->
         <aside class="configurator-sidebar">
             <div class="content-block">
-                <h1 class="product-title">Model S Plaid</h1>
-                <p class="tagline">Plaid: 1,020 hp | 1.99s 0-60 mph</p>
+                <h1 class="configurator-title" id="config-title">Model S Plaid</h1>
+                <p class="tagline" id="config-specs">1020 hp | 1.99s 0-60 mph</p>
                 
-                <div class="specs-row">
-                    <div class="spec-card">
-                        <h3>396mi</h3>
-                        <p>Range (est.)</p>
-                    </div>
-                    <div class="spec-card">
-                        <h3>1.99s</h3>
-                        <p>0-60 mph</p>
-                    </div>
-                </div>
-
-                <div class="selection-box">
+                <div class="selection-group">
                     <h3>Select Color</h3>
-                    <div class="color-options">
-                        <button class="dot white active"></button>
-                        <button class="dot black"></button>
-                        <button class="dot red"></button>
-                    </div>
+                    <div class="color-options" id="color-options"></div>
+                </div>
+                
+                <div class="selection-group">
+                    <h3>Wheels</h3>
+                    <div class="wheel-options" id="wheel-options"></div>
                 </div>
 
-                <button class="cta-button">Order Now</button>
-            </div>
-
-            <div class="extra-info">
-                <h3>Interior Highlights</h3>
-                <p>A 17” touchscreen with left-right tilt offers 2200 x 1300 resolution, true colors and exceptional responsiveness for gaming, movies and more.</p>
+                <button class="cta-button" id="cta-button">Order Now</button>
             </div>
         </aside>
     </main>
