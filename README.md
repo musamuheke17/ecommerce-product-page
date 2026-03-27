@@ -1,5 +1,10 @@
 # 🛒 Modern E-commerce Product Detail Page
 
+## 📖 Project Vision
+In a digital-first economy, the **Product Detail Page (PDP)** is the most critical touchpoint for conversion. Our team developed this project with a focus on **mobile-first responsiveness** and **user-centric design**. 
+
+By leveraging **semantic HTML5** and **modern CSS layouts**, we reduced interface friction, ensuring that product information is accessible and persuasive. This project serves as a foundation for integrating **AI-driven personalization** and dynamic data handling in future iterations.
+
 A responsive, high-performance product detail page designed to provide a seamless shopping experience. This project focuses on clean UI/UX, mobile-first responsiveness, and interactive product exploration.
 
 ---
