@@ -1,18 +1,25 @@
 /* Tesla/NovaCartel Premium - Responsive, Inter, Object-fit */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* CHANGE 1: Added CSS variables for accent colors for easier future updates */
 :root {
   --dark: #171a20;
   --gray: #393c41;
   --light: #f4f4f4;
   --gold: #D4AF37;
   --white: #fff;
+  --accent: #38bdf8; /* NEW: added accent color for hover effects or highlights */
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* CHANGE 2: Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth; /* Allows smooth navigation when clicking links */
 }
 
 body {
@@ -22,12 +29,13 @@ body {
   overflow-x: hidden;
 }
 
+/* PAGE WRAPPER */
 .page-wrapper {
   display: flex;
   min-height: 100vh;
 }
 
-/* Hero Visual - Sticky Left */
+/* HERO VISUAL */
 .visual-stage {
   flex: 1;
 }
@@ -47,13 +55,15 @@ body {
   height: 90%;
   object-fit: cover;
   transition: opacity 0.5s ease, transform 0.8s ease;
+  /* CHANGE 3: Added shadow for premium look */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .hero-image:hover {
   transform: scale(1.05);
 }
 
-/* Navigation */
+/* NAVIGATION */
 .navbar {
   position: sticky;
   top: 0;
@@ -64,6 +74,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* CHANGE 4: Added subtle shadow for depth */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .logo {
@@ -83,6 +95,23 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
+  /* CHANGE 5: Added underline hover effect */
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
 }
 
 .nav-menu a:hover {
@@ -97,7 +126,7 @@ body {
   padding: 1rem;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s ease;
 }
 
 .discover:hover .mega-menu {
@@ -125,17 +154,18 @@ body {
   opacity: 1;
 }
 
-/* Content Sections */
+/* CONTENT SECTIONS */
 .content-sections {
   flex: 1;
   padding: 4rem 2rem;
   max-width: 1200px;
 }
 
+/* CHANGE 6: Added grid gap for better spacing */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem; /* slightly increased for readability */
 }
 
 .product-section {
@@ -147,6 +177,8 @@ body {
 .product-section.animate {
   opacity: 1;
   transform: translateY(0);
+  /* CHANGE 7: Added fadeInUp animation for better appearance */
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .product-card {
@@ -155,6 +187,8 @@ body {
   overflow: hidden;
   transition: transform 0.4s, box-shadow 0.4s;
   cursor: pointer;
+  /* CHANGE 8: Added subtle border for definition */
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .product-card:hover {
@@ -193,9 +227,11 @@ body {
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--gold);
+  /* CHANGE 9: Added slight margin-top for spacing */
+  margin-top: 5px;
 }
 
-/* Configurator - Right Sidebar */
+/* CONFIGURATOR SIDEBAR */
 .configurator-sidebar {
   flex: 0 0 380px;
   background: linear-gradient(135deg, var(--dark), var(--gray));
@@ -206,47 +242,13 @@ body {
   overflow-y: auto;
 }
 
-.configurator-title {
-  font-size: 2.5rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-  line-height: 1.1;
-}
-
-.tagline {
-  opacity: 0.8;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-}
-
-.selection-group {
-  margin-bottom: 2.5rem;
-}
-
-.selection-group h3 {
-  margin-bottom: 1rem;
-  opacity: 0.9;
-}
-
-.color-options, .wheel-options {
-  display: flex;
-  gap: 1rem;
-}
-
-.color-dot, .wheel-dot {
-  width: 50px;
-  height: 50px;
-  border: 3px solid transparent;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-size: cover;
-  background-position: center;
-}
-
-.color-dot.active, .wheel-dot.active {
+/* CONFIGURATOR BUTTONS */
+.color-dot.active,
+.wheel-dot.active {
   border-color: var(--gold);
   transform: scale(1.1);
+  /* CHANGE 10: Added subtle shadow on selection */
+  box-shadow: 0 4px 12px rgba(212,175,55,0.3);
 }
 
 .cta-button {
@@ -269,7 +271,7 @@ body {
   box-shadow: 0 15px 30px rgba(212,175,55,0.4);
 }
 
-/* Auth Modal */
+/* AUTH MODAL */
 .auth-btn {
   background: var(--gold);
   color: var(--dark);
@@ -310,6 +312,7 @@ body {
   overflow-y: auto;
 }
 
+/* TABS */
 .auth-tabs {
   display: flex;
   border-bottom: 1px solid #555;
@@ -340,48 +343,7 @@ body {
   display: block;
 }
 
-.google-btn {
-  width: 100%;
-  padding: 1rem;
-  background: #4285f4;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  transition: background 0.3s;
-}
-
-.google-btn:hover {
-  background: #3367d6;
-}
-
-.divider {
-  text-align: center;
-  margin: 1.5rem 0;
-  color: var(--light);
-  opacity: 0.6;
-  position: relative;
-}
-
-.divider::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--gray);
-}
-
-.divider::after {
-  content: 'OR';
-  background: var(--gray);
-  padding: 0 1rem;
-  color: var(--light);
-}
-
+/* INPUTS */
 .auth-input {
   width: 100%;
   padding: 1rem;
@@ -391,6 +353,7 @@ body {
   border-radius: 8px;
   color: var(--white);
   font-size: 1rem;
+  transition: all 0.2s; /* CHANGE 11: Added smooth focus transition */
 }
 
 .auth-input:focus {
@@ -408,18 +371,7 @@ body {
   margin-top: 0.5rem;
 }
 
-.cta-button {
-  font-weight: 700 !important;
-}
-
-@media (max-width: 768px) {
-  .modal-content {
-    margin: 1rem;
-    padding: 2rem 1.5rem;
-  }
-}
-
-/* Responsive */
+/* RESPONSIVE CHANGES */
 @media (max-width: 1100px) {
   .page-wrapper {
     flex-direction: column;
@@ -445,14 +397,14 @@ body {
   .hero-wrapper {
     height: 60vh;
   }
+  .modal-content {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+  }
 }
 
-/* Animations */
+/* ANIMATIONS */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-.product-section.animate {
-  animation: fadeInUp 0.8s ease forwards;
 }
