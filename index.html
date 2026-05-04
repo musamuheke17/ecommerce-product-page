@@ -18,7 +18,7 @@
     <nav class="navbar">
         <div class="logo">NovaCartel</div>
 
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
         <ul class="nav-menu" id="nav-menu">
             <li><a href="#vehicles">Vehicles</a></li>
@@ -60,8 +60,6 @@
 <!-- AUTH MODAL -->
 <div id="auth-modal" class="modal-overlay">
     <div class="modal-content">
-
-        <!-- CLOSE BUTTON -->
         <button class="close-btn" onclick="toggleAuthModal()">✕</button>
 
         <div class="auth-tabs">
@@ -75,12 +73,10 @@
             <div class="divider">OR</div>
 
             <form id="sign-in-form">
-                <input type="email" placeholder="Email" class="auth-input" required aria-label="Email address">
-                <input type="password" placeholder="Password" class="auth-input" required minlength="6" aria-label="Password">
+                <input type="email" placeholder="Email" class="auth-input" required>
+                <input type="password" placeholder="Password" class="auth-input" required minlength="6">
                 <button type="submit" class="cta-button">Sign In</button>
             </form>
-
-            <a href="#" class="forgot-link">Forgot Password?</a>
         </div>
 
         <!-- SIGN UP -->
@@ -89,70 +85,74 @@
             <div class="divider">OR</div>
 
             <form id="sign-up-form">
-                <input type="email" placeholder="Email" class="auth-input" required aria-label="Email address">
-                <input type="password" placeholder="Password" class="auth-input" required minlength="6" aria-label="Password">
-                <input type="password" placeholder="Confirm Password" class="auth-input" required minlength="6" aria-label="Confirm password">
-                
+                <input type="email" placeholder="Email" class="auth-input" required>
+                <input type="password" placeholder="Password" class="auth-input" required minlength="6">
+                <input type="password" placeholder="Confirm Password" class="auth-input" required minlength="6">
                 <button type="submit" class="cta-button">Create Account</button>
             </form>
         </div>
-
     </div>
 </div>
 
-<!-- MAIN CONTENT -->
-<main class="page-wrapper">
+<!-- MAIN -->
+<main>
 
     <!-- HERO -->
-    <section class="visual-stage">
-        <div class="hero-wrapper">
-            <img 
-                src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1200"
-                id="hero-image"
-                class="hero-image"
-                alt="Premium electric vehicle display"
-                loading="lazy"
-                width="1200"
-                height="600">
+    <section class="hero">
+        <h1>Future of Premium Commerce</h1>
+        <p>Luxury vehicles, clean energy, and elite lifestyle products</p>
+        <button class="cta-button">Explore Now</button>
+    </section>
+
+    <!-- VEHICLES -->
+    <section id="vehicles" class="section">
+        <h2>Our Vehicles</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400">
+                <h3>Nova X</h3>
+                <p>$89,000</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=400">
+                <h3>Nova S</h3>
+                <p>$102,000</p>
+            </div>
         </div>
     </section>
 
-    <!-- CONTENT SECTIONS -->
-    <div id="content-sections" class="content-sections">
-
-        <section id="vehicles">
-            <h2>Our Vehicles</h2>
-        </section>
-
-        <section id="energy">
-            <h2>Energy Solutions</h2>
-        </section>
-
-        <section id="apparel">
-            <h2>Apparel Collection</h2>
-        </section>
-
-    </div>
-
-    <!-- CONFIGURATOR -->
-    <aside class="configurator-sidebar">
-        <div class="content-block">
-            <h1 class="configurator-title" id="config-title">Model S Plaid</h1>
-            <p class="tagline" id="config-specs">1020 hp | 1.99s 0-60 mph</p>
-
-            <div class="selection-group">
-                <h3>Select Color</h3>
-                <div class="color-options" id="color-options"></div>
+    <!-- ENERGY -->
+    <section id="energy" class="section">
+        <h2>Energy Solutions</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Solar Grid</h3>
+                <p>Power your home with clean energy</p>
             </div>
 
-            <div class="selection-group">
-                <h3>Wheels</h3>
-                <div class="wheel-options" id="wheel-options"></div>
+            <div class="card">
+                <h3>Power Storage</h3>
+                <p>Reliable battery backup systems</p>
             </div>
-
-            <button class="cta-button" id="order-now-btn">Order Now</button>
         </div>
-    </aside>
+    </section>
+
+    <!-- APPAREL -->
+    <section id="apparel" class="section">
+        <h2>Apparel Collection</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Nova Jacket</h3>
+                <p>$120</p>
+            </div>
+
+            <div class="card">
+                <h3>Elite Hoodie</h3>
+                <p>$80</p>
+            </div>
+        </div>
+    </section>
 
 </main>
 
@@ -161,8 +161,7 @@
     <p>© 2026 NovaCartel. All rights reserved.</p>
 </footer>
 
-<!-- SCRIPT -->
-<script src="script.js" defer></script>
+<script src="script.js"></script>
 
 </body>
 </html>
